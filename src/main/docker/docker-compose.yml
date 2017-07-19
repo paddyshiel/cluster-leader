@@ -1,0 +1,29 @@
+version: '2'
+services:
+  zookeeper_1:
+    build: ./docker-zookeeper-image
+    ports:
+      - "2181:2181"
+      - "2888:2888"
+      - "3888:3888"
+    container_name: zookeeper_1
+    volumes:
+          - './config/zookeeper_1.conf:/opt/zookeeper/conf/zoo.cfg'
+  zookeeper_2:
+    build: ./docker-zookeeper-image
+    ports:
+      - "2182:2182"
+      - "2888:2889"
+      - "3889:3889"
+    container_name: zookeeper_2
+    volumes:
+          - './config/zookeeper_2.conf:/opt/zookeeper/conf/zoo.cfg'
+  zookeeper_3:
+    build: ./docker-zookeeper-image
+    ports:
+      - "2183:2183"
+      - "2888:2890"
+      - "3890:3890"
+    container_name: zookeeper_3
+    volumes:
+          - './config/zookeeper_2.conf:/opt/zookeeper/conf/zoo.cfg'
