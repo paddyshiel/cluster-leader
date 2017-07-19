@@ -1,0 +1,1 @@
+docker run -p 2181:2818 -p 2888:2888 -p 3888:3888 patricks/docker-zookeeper:1
